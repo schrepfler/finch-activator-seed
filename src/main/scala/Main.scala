@@ -1,4 +1,5 @@
 import io.finch._
+import com.twitter.util.Await
 import com.twitter.finagle.Http
 
 /**
@@ -21,5 +22,5 @@ object Main extends App {
 
   val api: Endpoint[String] = get("hello") { Ok("Hello, World!") }
 
-  Await.all(Http.serve(":8080", api.toService))
+  Await.ready(Http.serve(":8080", api.toService))
 }
