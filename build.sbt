@@ -4,7 +4,14 @@ version := "0.0.1-SNAPSHOT"
 
 scalaVersion := "2.11.7"
 
+// what class starts the server
 mainClass in (Compile, run) := Some("Main")
+
+// include the server settings
+packageArchetype.java_server
+
+// global package settings
+packageDescription := "Custom application configuration"
 
 libraryDependencies ++= Seq(
 	  "com.github.finagle" %% "finch-core" % "0.10.0"
