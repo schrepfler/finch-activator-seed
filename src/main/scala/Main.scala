@@ -21,5 +21,5 @@ object Main extends App {
 
   val api: Endpoint[String] = get("hello") { Ok("Hello, World!") }
 
-  Http.serve(":8080", api.toService)
+  Await.all(Http.serve(":8080", api.toService))
 }
