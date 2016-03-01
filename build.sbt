@@ -17,3 +17,5 @@ libraryDependencies ++= Seq(
 resolvers ++= Seq(
 	 Resolver.sonatypeRepo("snapshots")
 )
+
+enablePlugins(JavaAppPackaging)
